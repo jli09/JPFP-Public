@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const dummyCampuses = [
+const campuses = [
   {
     name: 'Brooklyn UI Academy',
     address: '86 Atlantic Ave., Brooklyn, NY',
@@ -28,7 +28,7 @@ export class AllCampuses extends React.Component {
       <div>
         <h1>All Campuses</h1>
         <ul>
-          {dummyCampuses.map((campus, index) => (
+          {campuses.map((campus, index) => (
             <li key={index}>
               <img src={campus.imageUrl} />
               <h2>{campus.name}</h2>
