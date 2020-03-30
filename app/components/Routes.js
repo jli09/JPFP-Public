@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { AllCampuses } from './AllCampuses';
+import AllCampuses from './AllCampuses';
 import { AllStudents } from './AllStudents';
 import Navbar from './Navbar';
 
