@@ -36,7 +36,7 @@ The requirements below are broken into separate **tiers**, which model the way w
 
 #### Seed
 
-- [ ] Running the seed file creates campuses and students for demonstration purposes
+- [x ] Running the seed file creates campuses and students for demonstration purposes
 
 Congrats! You have completed your first vertical slice! Make sure to `commit -m "Feature: Get All Campuses and Students"` before moving on (see RUBRIC.md - points are awarded/deducted for a proper git workflow)!
 
