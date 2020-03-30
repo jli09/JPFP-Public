@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const SET_STUDENTS = 'SET_STUDENTS';
 
 export const setStudents = (students) => ({
@@ -5,7 +7,7 @@ export const setStudents = (students) => ({
   students
  });
 
-export const fetchStudents = () => async (dispatch, getState, axios) => {
+export const fetchStudents = () => async (dispatch) => {
   try {
     const { data } = await axios.get('/api/students/');
     dispatch(setStudents(data));

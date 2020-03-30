@@ -23,11 +23,11 @@ const Student = db.define('student', {
       notEmpty: true,
       isEmail: true,
     },
-    imageUrl: {
-      type: Sequelize.STRING,
-      defaultValue:
-        'https://cdn2.iconfinder.com/data/icons/human-resource-1/50/50-512.png',
-    },
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue:
+      'https://cdn2.iconfinder.com/data/icons/human-resource-1/50/50-512.png',
   },
   gpa: {
     type: Sequelize.FLOAT(2),
