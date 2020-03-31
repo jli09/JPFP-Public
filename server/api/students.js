@@ -3,7 +3,7 @@ const { Campus, Student } = require('../db');
 
 router.get('/', async (req, res, next) => {
   try {
-    const students = await Student.findAll();
+    const students = await Student.findAll({include: [{model: Campus}]});
     res.json(students);
   } catch (err) {
     console.error(err.stack);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchStudents } from '../redux/students';
+import Student from './Student';
 
 // Notice that we're exporting the AllStudents component twice. The named export
 // (below) is not connected to Redux, while the default export (at the very
@@ -13,18 +14,15 @@ export class AllStudents extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>All Students</h1>
-        <ul>
+      <div id="all_students_container">
+        <div id="all_students_header">
+          <h1>All Students</h1>
+        </div>
+        <div id="all_students_main">
           {this.props.students.map(student => (
-            <li key={student.id}>
-              <img src={student.imageUrl} />
-              <h2>
-                {student.firstName} {student.lastName}
-              </h2>
-            </li>
+            <Student key={student.id} student={student} />
           ))}
-        </ul>{' '}
+        </div>
       </div>
     );
   }
