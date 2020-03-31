@@ -4,11 +4,11 @@ const Campus = props => {
   const { campus } = props;
 
   return (
-    <div className="Campus_Display">
-      <div className="Campus_Display_Left">
-        <img src={campus.imageUrl} />
+    <div className="campus_display">
+      <div className="campus_display_left">
+        <img src={campus.imageUrl} className="campus_img" />
       </div>
-      <div className="Campus_Display_Right">
+      <div className="campus_display_right">
               <h2>{campus.name}</h2>
               <h3>{campus.address}</h3>
               <p>{campus.description}</p>

@@ -13,11 +13,11 @@ export class AllCampuses extends React.Component {
 
   render() {
     return (
-      <div id="All_Campus_Container">
-        <div id="All_Campus_Header">
+      <div id="all_campus_container">
+        <div id="all_campus_header">
           <h1>All Campuses</h1>
         </div>
-        <div id="All_Campus_Main">
+        <div id="all_campus_main">
           {this.props.campuses.map(campus => (
             <Campus key={campus.id} campus={campus} />
           ))}

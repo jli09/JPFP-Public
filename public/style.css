@@ -38,7 +38,34 @@ main {
   justify-content: center;
 }
 
-img {
-  width: 300px;
+#all_campus_header {
+  display: flex;
+  justify-content: center;
+}
+
+#all_campus_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3em;
+}
+
+.campus_display {
+  display: flex;
+  margin: 2em;
+  background-color: lightblue;
+  width: 35em;
+}
+
+.campus_display_left {
+  margin: 1em;
+}
+
+.campus_display_right {
+  margin: 1em;
+}
+
+.campus_img {
+  width: 250px;
   height: 200px;
 }
