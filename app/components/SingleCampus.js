@@ -10,8 +10,8 @@ class SingleCampus extends React.Component {
   }
 
   render() {
-      const { campus } = this.props;
-      console.log(campus.students);
+    const { campus } = this.props;
+    console.log(campus.students);
 
     return (
       <div className="single_campus_container">
@@ -25,10 +25,14 @@ class SingleCampus extends React.Component {
             <p>{campus.description}</p>
           </div>
         </div>
+        <div id="campus_students_header">
+          <h2>Students on Campus</h2>
+        </div>
         <div className="campus_students_display">
-          {campus.students && campus.students.map(student => (
-            <Student key={student.id} student={student} />
-          ))}
+          {campus.students &&
+            campus.students.map(student => (
+              <Student key={student.id} student={student} />
+            ))}
         </div>
       </div>
     );

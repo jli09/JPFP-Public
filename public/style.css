@@ -76,8 +76,8 @@ main {
 }
 
 .single_campus_img {
-  width: 375px;
-  height: 300px;
+  width: 425px;
+  height: 350px;
 }
 
 .single_campus_left {
@@ -85,6 +85,18 @@ main {
 }
 
 .single_campus_right {
+  margin: 1em;
+}
+
+#campus_students_header {
+  display: flex;
+  justify-content: center;
+}
+
+.campus_students_display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: 1em;
 }
 
