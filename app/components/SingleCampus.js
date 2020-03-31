@@ -11,7 +11,6 @@ class SingleCampus extends React.Component {
 
   render() {
     const { campus } = this.props;
-    console.log(campus.students);
 
     return (
       <div className="single_campus_container">

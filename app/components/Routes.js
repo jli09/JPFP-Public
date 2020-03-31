@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AllCampuses from './AllCampuses';
 import AllStudents from './AllStudents';
 import SingleCampus from './SingleCampus';
+import SingleStudent from './SingleStudent';
 import Navbar from './Navbar';
 
 const Routes = () => {
@@ -15,6 +16,7 @@ const Routes = () => {
           <Route exact path="/campuses" component={AllCampuses} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/campuses/:campusId" component={SingleCampus} />
+          <Route path="/students/:studentId" component={SingleStudent} />
         </main>
       </div>
     </Router>
