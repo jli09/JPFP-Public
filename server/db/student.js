@@ -27,7 +27,7 @@ const Student = db.define('student', {
   imageUrl: {
     type: Sequelize.STRING,
     defaultValue:
-      '../../public/student-default.webp',
+      'https://cdn2.iconfinder.com/data/icons/human-resource-1/50/50-512.png',
   },
   gpa: {
     type: Sequelize.FLOAT(2),

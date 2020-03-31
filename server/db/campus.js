@@ -11,7 +11,8 @@ const Campus = db.define('campus', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: '../../public/campus-default.jpg',
+    defaultValue:
+      'https://thumbs.dreamstime.com/z/college-campus-students-school-high-university-building-student-house-entrance-vector-illustration-116016077.jpg',
   },
   address: {
     type: Sequelize.STRING,

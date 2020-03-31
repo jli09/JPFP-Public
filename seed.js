@@ -8,7 +8,7 @@ const campuses = [
     description: 'Learn to make beautiful front end layouts!',
   },
   {
-    name: 'East Village School',
+    name: 'East Village API School',
     address: '7 2nd Ave., New York, NY',
     description: 'Master the back-end!',
   },
