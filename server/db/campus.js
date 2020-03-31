@@ -11,7 +11,7 @@ const Campus = db.define('campus', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'http://clipart-library.com/image_gallery/10150.jpg',
+    defaultValue: '../../public/campus-default.jpg',
   },
   address: {
     type: Sequelize.STRING,
