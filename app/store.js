@@ -4,7 +4,7 @@ import appReducer from './redux'
 import { createLogger } from 'redux-logger' // https://github.com/evgenyrodionov/redux-logger
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-thunk
-// import { fetchCampuses } from './redux/campuses'
+// import { fetchCampuses, createCampus } from './redux/campuses'
 // import { fetchStudents } from './redux/students'
 // import { fetchSingleCampus } from './redux/singleCampus'
 // import {fetchSingleStudent} from './redux/singleStudent'
@@ -50,7 +50,6 @@ export default createStore(
 //   composeWithDevTools(applyMiddleware(...middleware))
 // );
 
-// store.dispatch(fetchSingleCampus(1));
-// store.dispatch(fetchSingleStudent(3));
+// store.dispatch(createCampus({name: 'someName', address: 'someAddress'}));
 
 // export default store;
