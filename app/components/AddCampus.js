@@ -4,10 +4,18 @@ class AddCampus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      address: '',
-      description: '',
+      campusName: '',
+      campusAddress: '',
+      campusDescription: '',
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange() {
+  }
+
+  handleSubmit() {
   }
 
   render() {
@@ -16,14 +24,33 @@ class AddCampus extends React.Component {
         <h2>Add New Campus:</h2>
         <form>
           <p>
-            <label htmlFor="campusName">Campus Name: </label>
-            <input name="campusName" type="text" />
+            <label htmlFor="campusName">Name: </label>
+            <input name="campusName" type="text" onChange={this.handleChange} />
           </p>
 
-                <p>
-          <label htmlFor="campusAddress">Campus Address: </label>
-                <input name="campusAddress" type="text" />
-                </p>
+          <p>
+            <label htmlFor="campusAddress">Address: </label>
+            <input
+              name="campusAddress"
+              type="text"
+              onChange={this.handleChange}
+            />
+          </p>
+
+          <p>
+            <label htmlFor="campusDescription">Description: </label>
+            <input
+              name="campusDescription"
+              type="text"
+              onChange={this.handleChange}
+            />
+          </p>
+
+          <p>
+            <button type="submit" onSubmit={this.handleSubmit}>
+              Add
+            </button>
+          </p>
         </form>
       </div>
     );
