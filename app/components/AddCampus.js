@@ -13,10 +13,11 @@ class AddCampus extends React.Component {
   }
 
   handleChange() {
+      this.setState({ [event.target.name]: event.target.value });
+      console.log(this.state);
   }
 
-  handleSubmit() {
-  }
+  handleSubmit() {}
 
   render() {
     return (
