@@ -129,6 +129,7 @@ main {
   margin: 2em;
   padding: 1em;
   background-color: lightslategray;
+  color: black;
   width: 15em;
   height: 20em;
   display: flex;
