@@ -71,21 +71,21 @@ main {
   height: 200px;
 }
 
-.single_campus_display {
+.single_view_display {
   display: flex;
   margin: 2em;
 }
 
-.single_campus_img {
+.single_view_img {
   width: 425px;
   height: 350px;
 }
 
-.single_campus_left {
+.single_view_left {
   margin: 1em;
 }
 
-.single_campus_right {
+.single_view_right {
   margin: 1em;
 }
 

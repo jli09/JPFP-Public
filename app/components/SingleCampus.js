@@ -13,13 +13,13 @@ class SingleCampus extends React.Component {
     const { campus } = this.props;
 
     return (
-      <div className="single_campus_container">
-        <div className="single_campus_display">
-          <div className="single_campus_left">
-            <img src={campus.imageUrl} className="single_campus_img" />
+      <div className="single_view_container">
+        <div className="single_view_display">
+          <div className="single_view_left">
+            <img src={campus.imageUrl} className="single_view_img" />
             <h5>{campus.address}</h5>
           </div>
-          <div className="single_campus_right">
+          <div className="single_view_right">
             <h2>{campus.name}</h2>
             <p>{campus.description}</p>
           </div>

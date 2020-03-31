@@ -12,13 +12,14 @@ class SingleStudent extends React.Component {
         const { student } = this.props;
 
         return (
-            <div className="single_campus_container">
-                <div className="single_campus_display">
-                    <div className="single_campus_left">
-                        <img src={student.imageUrl} className="single_campus_img" />
+            <div className="single_view_container">
+                <div className="single_view_display">
+                    <div className="single_view_left">
+                        <img src={student.imageUrl} className="single_view_img" />
                     </div>
-                    <div className="single_campus_right">
+                    <div className="single_view_right">
                         <h2>{student.firstName} {student.lastName}</h2>
+                        <h4>Contact: {student.email}</h4>
                         <p>GPA: {student.gpa}</p>
                     </div>
                 </div>
