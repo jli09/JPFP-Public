@@ -16,11 +16,11 @@ export const fetchSingleCampus = (id) => async (dispatch, getState, { axios }) =
     }
 };
 
-export default function singleCampusReducer(selectedCampus = {}, action) {
+export default function singleCampusReducer(singleCampus = {}, action) {
     switch (action.type) {
         case SELECT_CAMPUS:
             return action.campus;
         default:
-            return selectedCampus;
+            return singleCampus;
     }
 }
