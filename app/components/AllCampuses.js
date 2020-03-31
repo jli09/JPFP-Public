@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCampuses } from '../redux/campuses';
+import Campus from './Campus';
 
 // Notice that we're exporting the AllCampuses component twice. The named export
 // (below) is not connected to Redux, while the default export (at the very
@@ -12,16 +13,15 @@ export class AllCampuses extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>All Campuses</h1>
-        <ul>
+      <div id="All_Campus_Container">
+        <div id="All_Campus_Header">
+          <h1>All Campuses</h1>
+        </div>
+        <div id="All_Campus_Main">
           {this.props.campuses.map(campus => (
-            <li key={campus.id}>
-              <img src={campus.imageUrl} />
-              <h2>{campus.name}</h2>
-            </li>
+            <Campus key={campus.id} campus={campus} />
           ))}
-        </ul>
+        </div>
       </div>
     );
   }
@@ -35,7 +35,9 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    getCampuses: () => { dispatch(fetchCampuses()) },
+    getCampuses: () => {
+      dispatch(fetchCampuses());
+    },
   };
 };
 
