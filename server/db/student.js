@@ -30,7 +30,11 @@ const Student = db.define('student', {
       'https://cdn2.iconfinder.com/data/icons/human-resource-1/50/50-512.png',
   },
   gpa: {
-    type: Sequelize.FLOAT(2),
+    type: Sequelize.FLOAT,
+    validate: {
+      min: 0.0,
+      max: 4.0
+    }
   },
 });
 

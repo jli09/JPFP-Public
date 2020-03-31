@@ -7,7 +7,7 @@ export const setCampuses = campuses => ({
 
 export const fetchCampuses = () => async (dispatch, getState, {axios}) => {
   try {
-    const { data } = await axios.get('/api/campuses/');
+    const { data } = await axios.get('/api/campuses');
     dispatch(setCampuses(data));
   } catch (err) {
     console.log('Could not get campuses from database :-(');

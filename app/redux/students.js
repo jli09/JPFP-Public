@@ -7,7 +7,7 @@ export const setStudents = (students) => ({
 
 export const fetchStudents = () => async (dispatch, getState, {axios}) => {
   try {
-    const { data } = await axios.get('/api/students/');
+    const { data } = await axios.get('/api/students');
     dispatch(setStudents(data));
   }
   catch (err) {

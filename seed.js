@@ -52,8 +52,6 @@ const students = [
     firstName: 'Jim',
     lastName: 'Moriarty',
     email: 'jmoriarty@consultingcriminal.com',
-    gpa: 1.0,
-    campusId: 3,
   },
 ];
 
