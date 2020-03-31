@@ -11,10 +11,10 @@ export const setCampuses = campuses => ({
 export const addCampus = campus => ({
   type: ADD_CAMPUS,
   campus,
-})
+});
 
 //thunk creators
-export const fetchCampuses = () => async (dispatch, getState, {axios}) => {
+export const fetchCampuses = () => async (dispatch, getState, { axios }) => {
   try {
     const { data } = await axios.get('/api/campuses');
     dispatch(setCampuses(data));
@@ -24,16 +24,15 @@ export const fetchCampuses = () => async (dispatch, getState, {axios}) => {
   }
 };
 
-export const createCampus = (campus) => async (dispatch, getState, { axios }) => {
+export const createCampus = campus => async (dispatch, getState, { axios }) => {
   try {
-    const { data } = await axios.post('/api/campuses', campus);
+    const { data } = await axios.post('/api/campuses/', campus);
     dispatch(addCampus(data));
-  }
-  catch (err) {
+  } catch (err) {
     console.log('Could not create campus in database :-(');
     console.error(err.stack);
   }
-}
+};
 
 // Take a look at app/redux/index.js to see where this reducer is
 // added to the Redux store with combineReducers
