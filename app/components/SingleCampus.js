@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchSingleCampus } from '../redux/singleCampus';
 import { connect } from 'react-redux';
-import Student from './Student';
+import CampusStudent from './CampusStudent';
 
 class SingleCampus extends React.Component {
   componentDidMount() {
@@ -28,10 +28,10 @@ class SingleCampus extends React.Component {
         <div id="campus_students_header">
           <h2>Students on Campus</h2>
         </div>
-        <div className="campus_students_display">
+        <div className="campus_students_main">
           {campus.students &&
             campus.students.map(student => (
-              <Student key={student.id} student={student} />
+              <CampusStudent key={student.id} student={student} />
             ))}
         </div>
       </div>

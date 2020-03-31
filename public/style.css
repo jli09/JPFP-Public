@@ -94,11 +94,23 @@ main {
   justify-content: center;
 }
 
-.campus_students_display {
+.campus_students_main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 1em;
+}
+
+.campus_student_display {
+  width: 10em;
+  height: 15em;
+  background-color: lightslategray;
+  padding: 1em;
+}
+
+.campus_student_img {
+  width: 100px;
+  height: 100px;
 }
 
 #all_students_header {
