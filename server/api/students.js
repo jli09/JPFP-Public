@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Student } = require('../db');
+const { Campus, Student } = require('../db');
 
 router.get('/', async (req, res, next) => {
   try {
@@ -7,6 +7,18 @@ router.get('/', async (req, res, next) => {
     res.json(students);
   } catch (err) {
     console.error(err.stack);
+  }
+});
+
+router.get('/:id', async (req, res, next) => {
+  try {
+    const singleStudent = await Student.findOne({
+      where: { id: req.params.id },
+      include: [{ model: Campus }],
+    });
+    res.json(singleStudent);
+  } catch (err) {
+    next(err);
   }
 });
 
