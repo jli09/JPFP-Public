@@ -69,3 +69,31 @@ main {
   width: 250px;
   height: 200px;
 }
+
+#all_students_header {
+  display: flex;
+  justify-content: center;
+}
+
+#all_students_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 3em;
+}
+
+.student_display {
+  margin: 2em;
+  padding: 1em;
+  background-color: lightslategray;
+  width: 15em;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.student_img {
+  width: 150px;
+  height: 150px;
+}
