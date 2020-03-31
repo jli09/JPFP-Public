@@ -142,3 +142,8 @@ main {
   width: 150px;
   height: 150px;
 }
+
+.student_campus_msg {
+  display: flex;
+  justify-content: center;
+}
