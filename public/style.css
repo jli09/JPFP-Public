@@ -70,6 +70,24 @@ main {
   height: 200px;
 }
 
+.single_campus_display {
+  display: flex;
+  margin: 2em;
+}
+
+.single_campus_img {
+  width: 375px;
+  height: 300px;
+}
+
+.single_campus_left {
+  margin: 1em;
+}
+
+.single_campus_right {
+  margin: 1em;
+}
+
 #all_students_header {
   display: flex;
   justify-content: center;
