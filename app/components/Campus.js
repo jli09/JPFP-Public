@@ -12,19 +12,19 @@ const Campus = props => {
         <img src={campus.imageUrl} className="campus_img" />
       </div>
       <div className="campus_display_right">
-        <Link to={`/campuses/${campus.id}`}>
-          <h2>{campus.name}</h2>
-        </Link>
-        <h3>{campus.address}</h3>
-        <div className="campus_display_right_footer">
+        <div className="delete_bar">
           <button
             type="button"
             className="delete_button"
             onClick={() => props.deleteCampus(campus.id)}
           >
-            delete
+            X
           </button>
         </div>
+        <Link to={`/campuses/${campus.id}`}>
+          <h2>{campus.name}</h2>
+        </Link>
+        <h3>{campus.address}</h3>
       </div>
     </div>
   );

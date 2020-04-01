@@ -69,7 +69,7 @@ main {
   color: black;
 }
 
-.campus_display_right_footer {
+.delete_bar {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -148,6 +148,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.student_display h3{
+  color: black;
 }
 
 .student_img {
