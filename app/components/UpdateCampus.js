@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleCampus } from '../redux/singleCampus';
+import { updateCampus } from '../redux/campuses';
 
 class UpdateCampus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.match.params.campusId,
       name: '',
       address: '',
       description: '',
@@ -16,8 +18,7 @@ class UpdateCampus extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.match.params.campusId;
-    this.props.getCampus(id);
+    this.props.getCampus(this.state.id);
   }
 
   handleClick() {
@@ -32,7 +33,7 @@ class UpdateCampus extends React.Component {
   //needs to be defined
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    this.props.editCampus(this.state.id, this.state);
   }
 
   render() {
@@ -94,6 +95,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getCampus: id => {
     dispatch(fetchSingleCampus(id));
+  },
+  editCampus: (id, updates) => {
+    dispatch(updateCampus(id, updates));
   },
 });
 
