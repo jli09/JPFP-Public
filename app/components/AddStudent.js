@@ -22,7 +22,7 @@ class AddStudent extends React.Component {
     event.preventDefault();
     this.props.addStudent(this.state);
     this.setState({ firstName: '', lastName: '', email: '' });
-    this.props.history.push("/students");
+    this.props.history.push("/students"); //now working
   }
 
   render() {
