@@ -33,7 +33,7 @@ class AddStudent extends React.Component {
     }
 
     return (
-      <div className="add_student_container">
+      <div className="form_container">
         <h2>Add New Student:</h2>
         <form onSubmit={this.handleSubmit}>
           <p>

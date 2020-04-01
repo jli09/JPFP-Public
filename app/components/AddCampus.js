@@ -31,7 +31,7 @@ class AddCampus extends React.Component {
     if (this.state.name && this.state.address) disabled = false;
 
     return (
-      <div className="add_campus_container">
+      <div className="form_container">
         <h2>Add New Campus:</h2>
         <form onSubmit={this.handleSubmit}>
           <p>
