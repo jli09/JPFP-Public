@@ -158,6 +158,15 @@ main {
   margin: .75em;
 }
 
-.add_campus_button:disabled {
+.submit_button {
+  background-color: lightskyblue;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  width: 5em;
+  height: 3em;
+}
+
+.submit_button:disabled {
   background-color: slategray;
 }
