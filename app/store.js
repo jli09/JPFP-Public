@@ -4,8 +4,8 @@ import appReducer from './redux'
 import { createLogger } from 'redux-logger' // https://github.com/evgenyrodionov/redux-logger
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-thunk
-import { fetchCampuses, createCampus, destroyCampus } from './redux/campuses'
-// import { fetchStudents, createStudent } from './redux/students'
+// import { fetchCampuses, createCampus, destroyCampus } from './redux/campuses'
+import { fetchStudents, createStudent, destroyStudent } from './redux/students'
 // import { fetchSingleCampus } from './redux/singleCampus'
 // import {fetchSingleStudent} from './redux/singleStudent'
 
@@ -50,7 +50,7 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
-store.dispatch(fetchCampuses());
-store.dispatch(destroyCampus(3));
+store.dispatch(fetchStudents());
+store.dispatch(destroyStudent(3));
 
 export default store;
