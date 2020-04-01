@@ -25,6 +25,10 @@ class AddCampus extends React.Component {
   }
 
   render() {
+    let disabled = true;
+
+    if (this.state.name && this.state.address) disabled = false;
+
     return (
       <div className="add_campus_container">
         <h2>Add New Campus:</h2>
@@ -60,7 +64,7 @@ class AddCampus extends React.Component {
           </p>
 
           <p>
-            <button type="submit">Add</button>
+            <button type="submit" className="add_campus_button" disabled={disabled}>Add</button>
           </p>
         </form>
       </div>

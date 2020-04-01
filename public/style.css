@@ -157,3 +157,7 @@ main {
   height: 3em;
   margin: .75em;
 }
+
+.add_campus_button:disabled {
+  background-color: slategray;
+}
