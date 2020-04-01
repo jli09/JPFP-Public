@@ -15,7 +15,8 @@ class AddStudent extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+      this.setState({ [event.target.name]: event.target.value });
+      console.log(this.state);
   }
 
   handleSubmit(event) {
@@ -27,7 +28,9 @@ class AddStudent extends React.Component {
   render() {
     let disabled = true;
 
-    if (this.state.name && this.state.address) disabled = false;
+    if (this.state.firstName && this.state.lastName && this.state.email) {
+      disabled = false;
+    }
 
     return (
       <div className="add_student_container">
@@ -64,11 +67,7 @@ class AddStudent extends React.Component {
           </p>
 
           <p>
-            <button
-              type="submit"
-              className="submit_button"
-              disabled={disabled}
-            >
+            <button type="submit" className="submit_button" disabled={disabled}>
               Submit
             </button>
           </p>
