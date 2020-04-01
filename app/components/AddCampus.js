@@ -64,7 +64,7 @@ class AddCampus extends React.Component {
           </p>
 
           <p>
-            <button type="submit" className="add_campus_button" disabled={disabled}>Add</button>
+            <button type="submit" className="add_campus_button" disabled={disabled}>Submit</button>
           </p>
         </form>
       </div>

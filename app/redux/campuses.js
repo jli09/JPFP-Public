@@ -26,7 +26,7 @@ export const fetchCampuses = () => async (dispatch, getState, { axios }) => {
 
 export const createCampus = campus => async (dispatch, getState, { axios }) => {
   try {
-    const { data } = await axios.post('/api/campuses/', campus);
+    const { data } = await axios.post('/api/campuses', campus);
     dispatch(addCampus(data));
   } catch (err) {
     console.log('Could not create campus in database :-(');
