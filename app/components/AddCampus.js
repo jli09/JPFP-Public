@@ -22,6 +22,7 @@ class AddCampus extends React.Component {
     event.preventDefault();
     this.props.addCampus(this.state);
     this.setState({ name: '', address: '', description: '' });
+    this.props.history.push("/campuses");
   }
 
   render() {
