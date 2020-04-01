@@ -54,7 +54,6 @@ main {
   display: flex;
   margin: 2em;
   background-color: lightblue;
-  color: black;
   width: 35em;
 }
 
@@ -65,6 +64,19 @@ main {
 .campus_display_right {
   margin: 1em;
 }
+
+.campus_display_right h2{
+  color: black;
+}
+
+.campus_display_right_footer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* .delete_button {
+  justify-content: flex-end;
+} */
 
 .campus_img {
   width: 250px;

@@ -5,7 +5,7 @@ import { createLogger } from 'redux-logger' // https://github.com/evgenyrodionov
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-thunk
 // import { fetchCampuses, createCampus, destroyCampus } from './redux/campuses'
-import { fetchStudents, createStudent, destroyStudent } from './redux/students'
+// import { fetchStudents, createStudent, destroyStudent } from './redux/students'
 // import { fetchSingleCampus } from './redux/singleCampus'
 // import {fetchSingleStudent} from './redux/singleStudent'
 
@@ -37,20 +37,20 @@ const rootReducer = (state, action) => {
   return appReducer(state, action)
 }
 
-// export default createStore(
-//   rootReducer,
-//   // 👇 This uses the Redux DevTools extension, assuming you have it installed in your browser.
-//   // 👇 See: https://github.com/zalmoxisus/redux-devtools-extension
-//   composeWithDevTools(applyMiddleware(...middleware))
-// )
-
-// **for testing only**
-const store = createStore(
+export default createStore(
   rootReducer,
+  // 👇 This uses the Redux DevTools extension, assuming you have it installed in your browser.
+  // 👇 See: https://github.com/zalmoxisus/redux-devtools-extension
   composeWithDevTools(applyMiddleware(...middleware))
-);
+)
 
-store.dispatch(fetchStudents());
-store.dispatch(destroyStudent(3));
+// // **for testing only**
+// const store = createStore(
+//   rootReducer,
+//   composeWithDevTools(applyMiddleware(...middleware))
+// );
 
-export default store;
+// store.dispatch(fetchStudents());
+// store.dispatch(destroyStudent(3));
+
+// export default store;
