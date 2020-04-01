@@ -40,7 +40,7 @@ main {
 
 #all_campus_header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 #all_campus_main {
@@ -146,4 +146,14 @@ main {
 .student_campus_msg {
   display: flex;
   justify-content: center;
+}
+
+.add_campus_button {
+  background-color: coral;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  width: 5em;
+  height: 3em;
+  margin: .75em;
 }

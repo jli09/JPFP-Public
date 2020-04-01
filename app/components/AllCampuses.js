@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchCampuses } from '../redux/campuses';
 import Campus from './Campus';
 
@@ -16,6 +17,14 @@ export class AllCampuses extends React.Component {
       <div id="all_campus_container">
         <div id="all_campus_header">
           <h1>All Campuses</h1>
+
+          <button
+            type="button"
+            className="add_campus_button"
+            onClick={() => this.props.history.push('/campuses/add')}
+          >
+            Add
+          </button>
         </div>
         <div id="all_campus_main">
           {this.props.campuses.map(campus => (
