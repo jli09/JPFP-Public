@@ -17,6 +17,14 @@ export class AllStudents extends React.Component {
       <div id="all_students_container">
         <div id="all_students_header">
           <h1>All Students</h1>
+
+          <button
+            type="button"
+            className="add_button"
+            onClick={() => this.props.history.push('/students/add')}
+          >
+            Add
+          </button>
         </div>
         <div id="all_students_main">
           {this.props.students.map(student => (

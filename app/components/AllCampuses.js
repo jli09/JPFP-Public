@@ -20,8 +20,8 @@ export class AllCampuses extends React.Component {
 
           <button
             type="button"
-            className="add_campus_button"
-            onClick={() => this.props.history.push('/campuses/add')}
+            className="add_button"
+            onClick={() => this.props.history.push("/campuses/add")}
           >
             Add
           </button>
