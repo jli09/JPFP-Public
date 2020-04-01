@@ -43,7 +43,7 @@ export const createStudent = student => async (dispatch, getState, { axios }) =>
 
 export const destroyStudent = id => async (dispatch, getState, { axios }) => {
   try {
-    await axios.delete(`/api/campuses/${id}`);
+    await axios.delete(`/api/students/${id}`);
     dispatch(deleteStudent(id));
   }
   catch (err) {
