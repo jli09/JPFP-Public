@@ -1,7 +1,6 @@
 import React from 'react';
 import { fetchSingleCampus } from '../redux/singleCampus';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
 import CampusStudent from './CampusStudent';
 import UpdateCampus from './UpdateCampus';
 
@@ -9,13 +8,28 @@ class SingleCampus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
+      address: '',
+      description: '',
       edit: false,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     const id = this.props.match.params.campusId;
     this.props.getSingleCampus(id);
+  }
+
+  handleClick() {
+    const { campus } = this.props;
+
+    this.setState({
+      name: campus.name,
+      address: campus.address,
+      description: campus.description,
+      edit: true
+    });
   }
 
   render() {
@@ -31,10 +45,10 @@ class SingleCampus extends React.Component {
           <div className="single_view_right">
             <h2>{campus.name}</h2>
             <p>{campus.description}</p>
-            <button type="button" onClick={() => this.setState({ edit: true })}>
+            <button type="button" onClick={this.handleClick}>
               Edit Info
             </button>
-            {this.state.edit ? <UpdateCampus /> : <div />}
+            {this.state.edit ? <UpdateCampus name={this.state.name} address={this.state.address} description={this.state.description} /> : <div />}
           </div>
         </div>
         <div id="campus_students_header">
