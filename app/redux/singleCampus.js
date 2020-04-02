@@ -50,7 +50,7 @@ export default function singleCampusReducer(singleCampus = {}, action) {
     case SELECT_CAMPUS:
       return action.campus;
       case EDIT_CAMPUS:
-          return action.updatedCampus;
+      return { ...singleCampus, ...action.updatedCampus };
     default:
       return singleCampus;
   }

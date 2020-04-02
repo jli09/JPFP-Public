@@ -50,7 +50,7 @@ export default function singleStudentReducer(singleStudent = {}, action) {
     case SELECT_STUDENT:
       return action.student;
     case EDIT_STUDENT:
-      return action.updatedStudent;
+      return { ...singleStudent, ...action.updatedStudent };
     default:
       return singleStudent;
   }
