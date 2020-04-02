@@ -19,6 +19,7 @@ class SingleStudent extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +36,19 @@ class SingleStudent extends React.Component {
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
     console.log(this.state);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { firstName, lastName, email, gpa } = this.state;
+
+    this.props.editStudent(this.state.id, {
+      firstName,
+      lastName,
+      email,
+      gpa,
+    });
+    this.setState({ edit: false });
   }
 
   render() {
@@ -62,6 +76,7 @@ class SingleStudent extends React.Component {
                 email={this.state.email}
                 gpa={this.state.gpa}
                 handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
               />
             ) : (
               <div />
@@ -91,6 +106,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getSingleStudent: id => {
     dispatch(fetchSingleStudent(id));
+  },
+  editStudent: (id, edits) => {
+    dispatch(updateStudent(id, edits));
   },
 });
 
