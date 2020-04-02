@@ -22,7 +22,7 @@ const Routes = () => {
             <Route path="/campuses/add" component={AddCampus} />
             <Route path="/students/add" component={AddStudent} />
             <Route exact path="/campuses/:campusId" component={SingleCampus} />
-            <Route path ="/campuses/:campusId/update" component={UpdateCampus} />
+            {/* <Route path ="/campuses/:campusId/update" component={UpdateCampus} /> */}
             <Route path="/students/:studentId" component={SingleStudent} />
           </Switch>
         </main>
