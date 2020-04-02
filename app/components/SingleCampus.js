@@ -17,6 +17,7 @@ class SingleCampus extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.unregisterStudent = this.unregisterStudent.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,10 @@ class SingleCampus extends React.Component {
       description: this.state.description,
     });
     this.setState({ edit: false });
+  }
+
+  unregisterStudent(studentId) {
+    console.log(studentId);
   }
 
   render() {
@@ -86,7 +91,7 @@ class SingleCampus extends React.Component {
         <div className="campus_students_main">
           {campus.students &&
             campus.students.map(student => (
-              <CampusStudent key={student.id} student={student} />
+              <CampusStudent key={student.id} student={student} unregister={this.unregisterStudent} />
             ))}
         </div>
       </div>
