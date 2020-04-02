@@ -1,4 +1,4 @@
-***PLEASE IGNORE 'EXTRAS' BRANCH, submitted project is in Master branch****
+***PLEASE IGNORE 'EXTRAS' BRANCH, submitted project is on Master branch****
 
 # Junior Phase Final Project
 
