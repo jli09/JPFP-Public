@@ -9,6 +9,7 @@ class SingleCampus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
       name: '',
       address: '',
       description: '',
@@ -16,6 +17,7 @@ class SingleCampus extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +29,7 @@ class SingleCampus extends React.Component {
     const { campus } = this.props;
 
     this.setState({
+      id: campus.id,
       name: campus.name,
       address: campus.address,
       description: campus.description,
@@ -37,6 +40,16 @@ class SingleCampus extends React.Component {
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
     console.log(this.state);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.editCampus(this.state.id, {
+      name: this.state.name,
+      address: this.state.address,
+      description: this.state.description,
+    });
+    this.setState({ edit: false });
   }
 
   render() {
@@ -61,6 +74,7 @@ class SingleCampus extends React.Component {
                 address={this.state.address}
                 description={this.state.description}
                 handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
               />
             ) : (
               <div />
@@ -91,7 +105,7 @@ const mapDispatchToProps = dispatch => ({
   },
   editCampus: (id, edits) => {
     dispatch(updateCampus(id, edits));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleCampus);

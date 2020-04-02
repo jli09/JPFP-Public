@@ -1,12 +1,12 @@
 import React from 'react';
 
 const UpdateCampus = props => {
-  const { name, address, description, handleChange } = props;
+  const { name, address, description, handleChange, handleSubmit } = props;
 
   return (
     <div className="form_container">
       <h3>Update Campus</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>
           <label htmlFor="name">Name: </label>
           <input name="name" type="text" value={name} onChange={handleChange} />
