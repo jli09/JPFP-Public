@@ -10,6 +10,18 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const singleStudent = await Student.findOne({
+      where: { id: req.params.id },
+      include: [{ model: Campus }],
+    });
+    res.json(singleStudent);
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post('/', async (req, res, next) => {
   try {
     const newStudent = await Student.create(req.body);
@@ -19,13 +31,14 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id', async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
   try {
-    const singleStudent = await Student.findOne({
+    const [numUpdates, update] = await Student.update(req.body, {
       where: { id: req.params.id },
-      include: [{ model: Campus }],
+      returning: true,
+      plain: true,
     });
-    res.json(singleStudent);
+    res.json(update);
   } catch (err) {
     next(err);
   }

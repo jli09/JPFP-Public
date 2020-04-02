@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-th
 // import { fetchCampuses, createCampus, destroyCampus, updateCampus } from './redux/campuses'
 // import { fetchStudents, createStudent, destroyStudent } from './redux/students'
 // import { fetchSingleCampus } from './redux/singleCampus'
-// import {fetchSingleStudent} from './redux/singleStudent'
+import {fetchSingleStudent, updateStudent} from './redux/singleStudent'
 
 
 let middleware = [
@@ -37,20 +37,19 @@ const rootReducer = (state, action) => {
   return appReducer(state, action)
 }
 
-export default createStore(
-  rootReducer,
-  // 👇 This uses the Redux DevTools extension, assuming you have it installed in your browser.
-  // 👇 See: https://github.com/zalmoxisus/redux-devtools-extension
-  composeWithDevTools(applyMiddleware(...middleware))
-)
+// export default createStore(
+//   rootReducer,
+//   // 👇 This uses the Redux DevTools extension, assuming you have it installed in your browser.
+//   // 👇 See: https://github.com/zalmoxisus/redux-devtools-extension
+//   composeWithDevTools(applyMiddleware(...middleware))
+// )
 
 // // **for testing only**
-// const store = createStore(
-//   rootReducer,
-//   composeWithDevTools(applyMiddleware(...middleware))
-// );
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
-// store.dispatch(fetchCampuses());
-// store.dispatch(updateCampus(3, {address: '33 Mott St., New York, NY'}));
+store.dispatch(updateStudent(5, {gpa: 1.0}));
 
-// export default store;
+export default store;
