@@ -18,6 +18,7 @@ class SingleStudent extends React.Component {
       edit: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,11 @@ class SingleStudent extends React.Component {
     const { student } = this.props;
 
     this.setState({ ...student, edit: true });
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   }
 
   render() {
@@ -55,6 +61,7 @@ class SingleStudent extends React.Component {
                 lastName={this.state.lastName}
                 email={this.state.email}
                 gpa={this.state.gpa}
+                handleChange={this.handleChange}
               />
             ) : (
               <div />
