@@ -15,7 +15,7 @@ class SingleStudent extends React.Component {
       gpa: null,
       campusId: null,
       campus: null,
-      edit: false
+      edit: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -49,7 +49,16 @@ class SingleStudent extends React.Component {
             <button type="button" onClick={this.handleClick}>
               Edit Info
             </button>
-            {this.state.edit ? <UpdateStudent /> : <div />}
+            {this.state.edit ? (
+              <UpdateStudent
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                email={this.state.email}
+                gpa={this.state.gpa}
+              />
+            ) : (
+              <div />
+            )}
           </div>
         </div>
         <div className="student_campus_display">

@@ -9,22 +9,22 @@ const UpdateStudent = props => {
       <form onSubmit={handleSubmit}>
         <p>
           <label htmlFor="firstName">First Name: </label>
-          <input name="firstName" type="text" />
+          <input name="firstName" type="text" value={firstName}/>
         </p>
 
         <p>
           <label htmlFor="lastName">Last Name: </label>
-          <input name="lastName" type="text" />
+          <input name="lastName" type="text" value={lastName}/>
         </p>
 
         <p>
           <label htmlFor="email">Contact: </label>
-          <input name="email" type="text" />
+          <input name="email" type="text" value={email}/>
         </p>
 
         <p>
           <label htmlFor="gpa">GPA: </label>
-          <input name="gpa" type="text" />
+          <input name="gpa" type="text" value={gpa}/>
         </p>
 
         <button type="submit" className="submit_button">
