@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CampusStudent = props => {
+
   const { student, unregister } = props;
 
   return (

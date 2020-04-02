@@ -54,7 +54,8 @@ class SingleCampus extends React.Component {
   }
 
   handleUnregister(studentId) {
-    this.props.unregisterStudent(studentId, {campusId: null});
+    this.props.unregisterStudent(studentId, { campusId: null });
+    this.props.history.push(`/students/${studentId}`);
   }
 
   render() {
@@ -92,7 +93,11 @@ class SingleCampus extends React.Component {
         <div className="campus_students_main">
           {campus.students &&
             campus.students.map(student => (
-              <CampusStudent key={student.id} student={student} unregister={this.handleUnregister} />
+              <CampusStudent
+                key={student.id}
+                student={student}
+                unregister={this.handleUnregister}
+              />
             ))}
         </div>
       </div>
@@ -113,7 +118,7 @@ const mapDispatchToProps = dispatch => ({
   },
   unregisterStudent: (id, edits) => {
     dispatch(updateStudent(id, edits));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleCampus);

@@ -4,11 +4,6 @@ import appReducer from './redux'
 import { createLogger } from 'redux-logger' // https://github.com/evgenyrodionov/redux-logger
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-thunk
-// import { fetchCampuses, createCampus, destroyCampus, updateCampus } from './redux/campuses'
-// import { fetchStudents, createStudent, destroyStudent } from './redux/students'
-// import { fetchSingleCampus } from './redux/singleCampus'
-// import {fetchSingleStudent, updateStudent} from './redux/singleStudent'
-
 
 let middleware = [
   // `withExtraArgument` gives us access to axios in our async action creators!
@@ -43,13 +38,3 @@ export default createStore(
   // 👇 See: https://github.com/zalmoxisus/redux-devtools-extension
   composeWithDevTools(applyMiddleware(...middleware))
 )
-
-// // **for testing only**
-// const store = createStore(
-//   rootReducer,
-//   composeWithDevTools(applyMiddleware(...middleware))
-// );
-
-// store.dispatch(updateStudent(5, {gpa: 1.0}));
-
-// export default store;
