@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchSingleCampus, updateCampus } from '../redux/singleCampus';
+import { updateStudent } from '../redux/singleStudent';
 import { connect } from 'react-redux';
 import CampusStudent from './CampusStudent';
 import UpdateCampus from './UpdateCampus';
@@ -17,7 +18,7 @@ class SingleCampus extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.unregisterStudent = this.unregisterStudent.bind(this);
+    this.handleUnregister = this.handleUnregister.bind(this);
   }
 
   componentDidMount() {
@@ -52,8 +53,8 @@ class SingleCampus extends React.Component {
     this.setState({ edit: false });
   }
 
-  unregisterStudent(studentId) {
-    console.log(studentId);
+  handleUnregister(studentId) {
+    this.props.unregisterStudent(studentId, {campusId: null});
   }
 
   render() {
@@ -91,7 +92,7 @@ class SingleCampus extends React.Component {
         <div className="campus_students_main">
           {campus.students &&
             campus.students.map(student => (
-              <CampusStudent key={student.id} student={student} unregister={this.unregisterStudent} />
+              <CampusStudent key={student.id} student={student} unregister={this.handleUnregister} />
             ))}
         </div>
       </div>
@@ -110,6 +111,9 @@ const mapDispatchToProps = dispatch => ({
   editCampus: (id, edits) => {
     dispatch(updateCampus(id, edits));
   },
+  unregisterStudent: (id, edits) => {
+    dispatch(updateStudent(id, edits));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleCampus);
