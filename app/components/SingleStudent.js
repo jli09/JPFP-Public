@@ -1,12 +1,34 @@
 import React from 'react';
-import { fetchSingleStudent } from '../redux/singleStudent';
+import { fetchSingleStudent, updateStudent } from '../redux/singleStudent';
 import { connect } from 'react-redux';
 import StudentCampus from './StudentCampus';
+import UpdateStudent from './UpdateStudent';
 
 class SingleStudent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: null,
+      firstName: '',
+      lastName: '',
+      email: '',
+      gpa: null,
+      campusId: null,
+      campus: null,
+      edit: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     const id = this.props.match.params.studentId;
     this.props.getSingleStudent(id);
+  }
+
+  handleClick() {
+    const { student } = this.props;
+
+    this.setState({ ...student, edit: true });
   }
 
   render() {
@@ -24,6 +46,10 @@ class SingleStudent extends React.Component {
             </h2>
             <h4>Contact: {student.email}</h4>
             <p>GPA: {student.gpa}</p>
+            <button type="button" onClick={this.handleClick}>
+              Edit Info
+            </button>
+            {this.state.edit ? <UpdateStudent /> : <div />}
           </div>
         </div>
         <div className="student_campus_display">
