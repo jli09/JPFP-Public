@@ -1,3 +1,5 @@
+***PLEASE IGNORE 'EXTRAS' BRANCH, submitted project is in Master branch****
+
 # Junior Phase Final Project
 
 ## Getting started
