@@ -1,6 +1,5 @@
 import React from 'react';
-import { fetchSingleCampus } from '../redux/singleCampus';
-import { updateCampus } from '../redux/campuses';
+import { fetchSingleCampus, updateCampus } from '../redux/singleCampus';
 import { connect } from 'react-redux';
 import CampusStudent from './CampusStudent';
 import UpdateCampus from './UpdateCampus';
