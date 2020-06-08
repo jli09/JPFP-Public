@@ -1,5 +1,3 @@
-**PLEASE IGNORE 'EXTRAS' BRANCH**
-**Project is on MAIN branch**
 Video link: https://youtu.be/azNvPoNHWL8
 
 # Junior Phase Final Project

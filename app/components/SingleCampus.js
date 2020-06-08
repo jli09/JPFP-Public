@@ -55,7 +55,7 @@ class SingleCampus extends React.Component {
 
   handleUnregister(studentId) {
     this.props.unregisterStudent(studentId, { campusId: null });
-    this.props.history.push(`/students/${studentId}`);
+    this.props.getSingleCampus(this.props.campus.id);
   }
 
   render() {
