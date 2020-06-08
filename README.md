@@ -1,4 +1,4 @@
-***PLEASE IGNORE 'EXTRAS' BRANCH, submitted project is on Master branch****
+Video link: https://youtu.be/azNvPoNHWL8
 
 # Junior Phase Final Project
 
