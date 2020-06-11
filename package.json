@@ -62,6 +62,6 @@
     "volleyball": "^1.5.1",
     "wait-for-expect": "^3.0.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.11"
   }
 }
